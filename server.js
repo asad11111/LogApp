@@ -20,7 +20,13 @@ var viewController=require('./controllers/viewController');
 var shareController=require('./controllers/shareController');
 var configs = require('./configs/config.js');
 var cloudinary= require('cloudinary');
+if(env=='development')
+{
 mongoose.connect('mongodb://localhost/traveldb');
+}
+else{
+mongoose.connect('mongodb://asad:maidaaaa1@ds161162.mlab.com:61162/heroku_54txt9cj');
+}
 var configs = require('./configs/config.js');
 process.env.GLOBAL_PATH= __dirname;
 configs.setConfigs();
@@ -79,6 +85,7 @@ app.get('www/index.html',function(req,res){
 })
 app.post('/share', multipartMiddleware, shareController.shareNewPicture);
 app.get('/getNewPhoto', viewController.getNewPhoto);
+var env=process.env.NODE_ENV=process.env.NODE_ENV||'development';
 
 // error handler
 app.use(function(err, req, res, next) {
