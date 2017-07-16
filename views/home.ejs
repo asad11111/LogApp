@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Travel Diaries</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//public/stylesheet/css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  	.container-fluid{
+  		margin-right:10%;
+  		margin-left: 10%;
+  	}
+  </style>
+</head>
+<body>
+  <div class="container-fluid" style="border-width: 1px">
+  	<div style="text-align:center">
+		<h1>Travel Diaries</h1>
+		<p class="lead">Upload your Photos</p>
+		<div style="margin-top:8%;">
+			<div class="col-sm-4 col-sm-offset-4" style="margin-bottom:1%">
+				<a class="link" href="/logout">Log Out</a>
+  				<form action="/home" method="POST" enctype="multipart/form-data">
+    				<input type="file" name="avatar" class="btn btn-primary">
+    				<br/>
+    				<input type="submit" value="Upload" class="btn btn-primary">
+  				</form>	
+			</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html ng-app='app'>
+
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+     
+     <script src="../lib/ng-file-upload.js"></script>
+     <script src="../app.js"></script>
+     <!--Controllers-->
+     <script src="./share-controller.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     
+<!-- Optional theme -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+     <script src="view-controller.js"></script>
+     <script src="share-controller.js"></script>
+
+</head>
+<body>
+<div class="container border-left-0 border-right-0" style="outline:1px; border-left-width: 1px; border-right-width: 1px; outline-color: black ">
+<div class="cols-md-6">
+<div class="panel-group">
+  <div class="panel-default">    
+     <h4 style="margin-right: 20%; margin-left: 20%">Update your status</h4>
+          
+     <div class="row">
+    
+     <div class="cols-sm-3" style="margin-right: 20%; margin-left: 20%">
+      <textarea class="form-control" rows="5" ng-model="description"></textarea>
+     
+     </div>
+     <div class="cols-sm-3" style="margin-right: 20%; margin-left: 20%">
+     <button class="btn btn-success"
+                ngf-select 
+                ng-model="file" 
+                name="file" 
+                ngf-pattern="'image/*'"
+                ngf-accept="'image/*'" 
+                ngf-max-size="20MB" 
+                ngf-min-height="100"
+                ngf-resize="{width: 700, height: 700}">
+          Add Image
+      </button>
+      <img ngf-thumbnail="file" style="height: 100px;width: 100px">
+      <button class="btn btn-danger">Go Live</button>
+      <button class="btn btn-success">Reviews</button>
+      <button class="btn btn-primary">Location</button>
+      </div>
+     <div class="cols-sm-3" style="text-align: right;">
+
+     <button style="margin-right: 20%; margin-left: 20%" class="btn btn-primary" ng-click="upload()"> Send</button>
+     </div>
+         
+     </div>
+
+     </div>
+     </div>
+     
+  </div>        
+</div>
+</body>
+</html>

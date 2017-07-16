@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//public/stylesheet/css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      .container-fluid
+      {
+        padding: 0;
+        margin:0;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+  <form role="form" action="/register" method="post" style="text-align:center">
+  <h1>Travel Diaries</h1>
+  <p class="lead">Register and Start your Journey.</p><br/>
+  
+  <div class="form-group col-sm-4 col-sm-offset-4">
+      <input id="name" type="text" placeholder="Full Name" name="username" class="form-control"/>
+    </div>
+    <div class="form-group col-sm-4 col-sm-offset-4">
+      <input id="email" type="email" placeholder="Your Valid Email" name="email" class="form-control"/>
+    </div>
+    <div class="form-group col-sm-4 col-sm-offset-4">
+      <label for="birthday">Date of Birth:</label>
+      <input id="birthday" type="date" name="birthday" class="form-control"/>
+    </div>
+    <div class="form-group col-sm-4 col-sm-offset-4">
+      <input id="pw" type="password" placeholder="Your Password" name="password" class="form-control"/>
+    </div>
+    <div class="form-group col-sm-4 col-sm-offset-4">
+      <input id="pw2" type="password" placeholder="Confirm Password" name="confirmPassword" class="form-control"/>
+    </div>
+  <div class="form-group col-sm-4 col-sm-offset-4">
+    <button type="submit" class="btn btn-primary">Sign up</button>&nbsp;<a href="/">
+      <button type="button" class="btn btn-primary">Cancel</button></a>
+    </div>
+  </form>
+</div>
+</body>
+</html>
