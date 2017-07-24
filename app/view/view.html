@@ -1,9 +1,42 @@
 <html>
+<head>
+	<style type="text/css">
+   body{
+    background-color: #F9F5F4;
+    margin:0px;
+    padding: 0px;
+   } 
+   #imgProp {
+    background-color: #f7f7f7;
+    width: 510px
+    border: 25px #f7f7f7;
+    margin: 0px;
+    padding-left:5px;
+    padding-right: 5px;
+    display: block;
+    direction: ltr;
+    line-height: 1.34;
+}
+  </style>
+</head>
 <body style="background-color: #F9F5F4">
-<div class="cols-sm-3" style=" margin-right: 30%; margin-left: 30%">
-             <div ng-repeat="pics in pics" style=" align-content: center;background-color: #FFFFFF">
-               {{pics.description}}<br/>
-               <img ng-src={{pics.url}} style="height: 500px; width: 500px"/>
+ <div id="imgProp" class="cols-sm-3" style=" margin-right: 29%; margin-left: 30%;">
+              <br/>
+            <br/>
+             <div ng-repeat="pics in pics" style="align-content: center; border-bottom: 6px">
+               <p class="text-information" style="font-size:18px">{{pics.description}}</p>
+                <p class="text-muted">{{pics.date}}</p>
+               {{user.username}}
+               <img ng-src={{pics.url}} style="height: 500px; width: 500px; padding-bottom: 10px"/>
+               <br/>
+               <button type="button" class="btn btn-default" ng-model="like" ng-click="like=like+1">
+               <span class="glyphicon glyphicon-heart"></span> Likes{{like}}</button>
+  			       <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-comment"></span>  
+    			     Comment 
+    			     </button>
+               <br/>
+               <br/>
                <br/>
                <br/>
           </div>
@@ -11,4 +44,5 @@
           <br/>
 </div>	
 </body>
+
 </html>

@@ -15,12 +15,20 @@
 			templateUrl:'app/share/share.html',
 			controller:'shareCtrl'
 		})
+		.state('stream',
+		{
+			url:'/stream',
+			templateUrl:'app/live/stream.html'
+		})
 		.state('index',
 		{
-			url:'/index',
-			templateUrl:'../www/index.html'
+			url:'index',
+			templateUrl:'app/reviews/www/index.html'
 		})
-			
+		.state('embed',{
+			url:'/embed',
+			templateUrl:'app/live/embed.html'
+		})	
 	}]);
 		
 

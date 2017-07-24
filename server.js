@@ -37,7 +37,7 @@ var app = express();
 var con= mongoose.connection;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+var env=process.env.NODE_ENV=process.env.NODE_ENV||'development';
 
 
 app.use(logger('dev'));
@@ -71,6 +71,9 @@ console.log('This is shareController'+ shareController.getNewPhoto);
 app.get('/nextPage', function(req, res)  {
     res.render('nextPage');
   });
+app.get('/embed',function(req,res){
+  res.render('embed');
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -85,7 +88,6 @@ app.get('www/index.html',function(req,res){
 })
 app.post('/share', multipartMiddleware, shareController.shareNewPicture);
 app.get('/getNewPhoto', viewController.getNewPhoto);
-var env=process.env.NODE_ENV=process.env.NODE_ENV||'development';
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -97,7 +99,13 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.set('port', process.env.PORT || 3000)
+var Review = mongoose.model('Review', {
+    title: String,
+    description: String,
+    rating: Number
+});
+
+app.set('port', process.env.PORT || 8080)
 
 var server = app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + server.address().port)

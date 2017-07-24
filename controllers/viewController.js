@@ -1,6 +1,8 @@
+
 var Pic = require('../datasets/pics.js');
 module.exports.getNewPhoto= function(req,res)
 {
+	
 	Pic.find({})
 	.limit(20)
 	.exec(function(err, photos){
@@ -14,4 +16,5 @@ module.exports.getNewPhoto= function(req,res)
 			res.json(photos);
 		}
 	})
+
 }

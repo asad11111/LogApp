@@ -2,6 +2,10 @@
 	angular.module('app')
 	.controller('shareCtrl',['$scope','$http','$window','Upload', function($scope,$http,$window,Upload)
 	{
+		$scope.submitClick=function()
+		{
+			
+		}
 		$scope.upload=function()
 		{
 			console.log('This is upload Function')

@@ -11,34 +11,102 @@
         padding: 0;
         margin:0;
       }
+      button
+      {
+        background-color: transparent;
+        border-color: #e01886;
+        border-radius: 5px;
+        color:#4a595e;
+        padding-top:5px;
+        padding-bottom: 5px 
+
+      }
+      button:hover
+      {
+        background-color: #17aae0;
+        border-color: transparent;
+        color: white;
+      }
+      body
+      {
+        background-image: url("321.jpg");
+        width: 100%;
+        height: 602px;
+        color:white;
+        background-repeat: no-repeat;
+        background-color: transparent;
+      }
+      .form-control{
+
+        background-color: transparent;
+        color:white;
+      }
     </style>
+    <script type="text/javascript">
+      function validateForm() 
+      {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == "") 
+        {
+          alert("Name must be filled out");
+          return false;
+        }
+      }
+      function passwordValid() 
+      {
+        var x,text;
+        x = document.getElementById("password1").value;
+        if (isNaN(x) || x < 6 || x > 10) 
+          {
+            text = "Input not valid";
+          } else 
+          {
+            text = "Ok it is valid";
+          }
+         document.getElementById("pass").innerHTML = text;
+       }
+
+       function formValid() 
+       {
+        var x,text;
+        x = document.forms["myForm"]["password1"].value;
+        if (isNaN(x) || x < 8 || x > 15) 
+        {
+          text="Invalid Input Password must be More than 6 characters";
+          se;
+        }
+         
+       }
+    </script>
+
 </head>
 <body>
 
     <div class="container-fluid">
-  <form role="form" action="/register" method="post" style="text-align:center">
+  <form role="form" id="myForm" onsubmit="return formValid()"  action="/register" method="post" style="text-align:center">
+  <br/><br/><br/><br/>
   <h1>Travel Diaries</h1>
   <p class="lead">Register and Start your Journey.</p><br/>
   
   <div class="form-group col-sm-4 col-sm-offset-4">
-      <input id="name" type="text" placeholder="Full Name" name="username" class="form-control"/>
+      <input id="name" type="text" required="required" onblur="return usernameValid()" style="border-color: #e01886"  placeholder="Full Name" name="username"  class="form-control"/>
+      <p id="abc" style="color: red"></p>
     </div>
     <div class="form-group col-sm-4 col-sm-offset-4">
-      <input id="email" type="email" placeholder="Your Valid Email" name="email" class="form-control"/>
+      <input id="email" style="border-color: #e01886" type="email" required="required"  placeholder="Your Valid Email" name="email" class="form-control"/>
     </div>
     <div class="form-group col-sm-4 col-sm-offset-4">
       <label for="birthday">Date of Birth:</label>
-      <input id="birthday" type="date" name="birthday" class="form-control"/>
+      <input id="birthday" type="date" style="border-color: #e01886" required="required"  name="birthday" class="form-control"/>
     </div>
     <div class="form-group col-sm-4 col-sm-offset-4">
-      <input id="pw" type="password" placeholder="Your Password" name="password" class="form-control"/>
+      <input id="password1" type="password" required="required" style="border-color: #e01886" placeholder="Your Password" onblur="return passwordValid()" name="password" class="form-control"/>
+      <p id="pass" style="color:red"></p>
     </div>
-    <div class="form-group col-sm-4 col-sm-offset-4">
-      <input id="pw2" type="password" placeholder="Confirm Password" name="confirmPassword" class="form-control"/>
-    </div>
+    
   <div class="form-group col-sm-4 col-sm-offset-4">
-    <button type="submit" class="btn btn-primary">Sign up</button>&nbsp;<a href="/">
-      <button type="button" class="btn btn-primary">Cancel</button></a>
+    <button type="submit" style="font-size: 20px; padding-right:50px;padding-left:50px" >Sign up</button>&nbsp;<a href="/">
+      <button type="button" style="font-size: 20px; padding-right:50px;padding-left:50px">Cancel</button></a>
     </div>
   </form>
 </div>
